@@ -158,3 +158,23 @@ ORDER BY hire_date DESC;
 SELECT   first_name, salary*12 AS annsal
 FROM     employees
 ORDER BY annsal;
+
+SELECT first_name, salary FROM employees
+ORDER BY salary DESC
+LIMIT 0, 10;
+
+
+SELECT first_name, salary FROM employees
+ORDER BY salary DESC
+LIMIT 10 OFFSET 0;
+
+
+SELECT first_name, salary
+FROM   employees
+ORDER BY salary DESC 
+OFFSET 10 ROW FETCH NEXT 4 ROWS ONLY;
+
+SELECT first_name, salary
+FROM   employees
+ORDER BY salary DESC 
+OFFSET 10 ROW FETCH FIRST 4 ROWS WITH TIES;
